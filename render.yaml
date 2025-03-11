@@ -37,8 +37,8 @@ services:
           type: web
           property: url
 
-  # Database
-  - type: postgresql
-    name: smartbar-db
-    ipAllowList: []
-    plan: starter 
+databases:
+  - name: smartbar-db
+    databaseName: smartbar
+    plan: starter
+    ipAllowList: [] 
