@@ -1,0 +1,41 @@
+{
+  "development": {
+    "username": "smartbar-banco_owner",
+    "password": "npg_XUFx6DjKMn4B",
+    "database": "smartbar-banco",
+    "host": "ep-dawn-frost-a81lqd4g-pooler.eastus2.azure.neon.tech",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+  "test": {
+    "username": "smartbar-banco_owner",
+    "password": "npg_XUFx6DjKMn4B",
+    "database": "smartbar-banco",
+    "host": "ep-dawn-frost-a81lqd4g-pooler.eastus2.azure.neon.tech",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+  "production": {
+    "username": "smartbar-banco_owner",
+    "password": "npg_XUFx6DjKMn4B",
+    "database": "smartbar-banco",
+    "host": "ep-dawn-frost-a81lqd4g-pooler.eastus2.azure.neon.tech",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
+} 

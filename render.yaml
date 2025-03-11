@@ -1,0 +1,44 @@
+services:
+  # Frontend Service
+  - type: web
+    name: smartbar-frontend
+    env: node
+    buildCommand: cd smartbar-frontend && npm install && npm run build
+    startCommand: cd smartbar-frontend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          name: smartbar-backend
+          type: web
+          property: url
+
+  # Backend Service
+  - type: web
+    name: smartbar-backend
+    env: node
+    buildCommand: cd smartbar-backend && npm install
+    startCommand: cd smartbar-backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: DATABASE_URL
+        fromDatabase:
+          name: smartbar-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        fromService:
+          name: smartbar-frontend
+          type: web
+          property: url
+
+  # Database
+  - type: postgresql
+    name: smartbar-db
+    ipAllowList: []
+    plan: starter 
