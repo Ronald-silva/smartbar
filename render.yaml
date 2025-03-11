@@ -9,10 +9,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: NEXT_PUBLIC_API_URL
-        fromService:
-          name: smartbar-backend
-          type: web
-          property: url
+        value: https://smartbar-backend.onrender.com
 
   # Backend Service
   - type: web
@@ -32,10 +29,7 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: CORS_ORIGIN
-        fromService:
-          name: smartbar-frontend
-          type: web
-          property: url
+        value: https://smartbar-frontend.onrender.com
 
 databases:
   - name: smartbar-db
